@@ -40,8 +40,14 @@ SERVER:
 11.)The file name can be changed on line 72 of the server code
 12.)The number of n-grams are fixed on line 59 of the script at 10. This can be changed but for demonstration purposes it is fixed for now.
 
+SERVERv2:
+1.) This server script displays words co-occuring with a group of words given an input phrase along with the bigram and trigram number.
+2.) Once you have entered an input phrase a number of matching phrases are returned along with which the word most frequently occurs(collocations).
+3.) These collocation phrases are used to return these same words.
+4.) The output from this does not return the frequency or word count but simply the most frequent phrase occuring with your word.
+
 CLIENT:
-1.) Once the server is up and running run "index.html" in the client directory. The browser I used was 	   chrome.
+1.) Once the server is up and running run "index.html" in the client directory. The browser I used was chrome.
 2.) There will be an option to select the number of n-grams and select start.
 3.) The client will send a GET request to http://127.0.0.1:5000/GetNgrams/2 where 2 is the number of n-grams.
 4.) The server will process the data file and return a JSON response of the format

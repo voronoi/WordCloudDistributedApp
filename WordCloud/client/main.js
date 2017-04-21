@@ -17,8 +17,8 @@ var ourData;
 document.getElementById("button").addEventListener("click", function() {
   alert("WordCloud processing may take a long time depending on your file size");
   var ourRequest = new XMLHttpRequest();
-  var e = document.getElementById("selector").value;
-  ourRequest.open('GET', 'http://127.0.0.1:5000/GetNgrams/' + e);
+  var e = '?n=' + document.getElementById("selector").value + '&word=' + document.getElementById("word").value;
+  ourRequest.open('GET', 'http://127.0.0.1:5000/GetNgrams' + e);
   ourRequest.send();
   ourRequest.onload = function() {
     if (ourRequest.status >= 200 && ourRequest.status < 400) {
@@ -26,17 +26,19 @@ document.getElementById("button").addEventListener("click", function() {
       document.getElementById("wordCloud").innerHTML = "";
       DrawWordCloud();
       } else {
-      console.log("We connected to the server, but it returned an error.");
+      console.log("We connected to the server, but it has returned an error.");
     }
   }})
 
+
     
    function DrawWordCloud(){
-      var data = Object.keys(ourData).map(function(d) {
+      var data = Object.values(ourData).map(function(d){ //change to Object.keys when using server
         //console.log(d);
         //console.log(jsonTest[d]);
-        //console.log({text: d, size: 10 + jsonTest[index].value * 90});
-        return {text: d, size: 20 + ourData[d]};
+        //console.log({text: d, size: 10 + ourData[index].value * 90});
+        //return {text: d, size: 20 + ourData[d]}; Use this line when using server
+        return {text: d, size: 30}; //Use this line when using serverV2 
       })
 
 
