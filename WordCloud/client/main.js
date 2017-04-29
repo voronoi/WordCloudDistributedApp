@@ -11,18 +11,33 @@ var fill = d3.scale.category20();
   "within assigned": 7, 
   "years experience": 7
 };*/
+function openLoading() {
+        document.getElementById('m').style.display = 'block';
+        document.getElementById('grey').style.display = 'block';
+}
+
+function closeLoading() {
+    document.getElementById('m').style.display = 'none';
+    document.getElementById('grey').style.display = 'none';
+}
+
+
+
 
 
 var ourData;
 document.getElementById("button").addEventListener("click", function() {
-  alert("WordCloud processing may take a long time depending on your file size");
+  openLoading();
+  //alert("WordCloud processing may take a long time depending on your file size");
   var ourRequest = new XMLHttpRequest();
   var e = '?n=' + document.getElementById("selector").value + '&word=' + document.getElementById("word").value;
   ourRequest.open('GET', 'http://127.0.0.1:5000/GetNgrams' + e);
   ourRequest.send();
+
   ourRequest.onload = function() {
     if (ourRequest.status >= 200 && ourRequest.status < 400) {
       ourData = JSON.parse(ourRequest.responseText);
+      closeLoading();
       document.getElementById("wordCloud").innerHTML = "";
       DrawWordCloud();
       } else {

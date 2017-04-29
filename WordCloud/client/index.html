@@ -3,15 +3,68 @@
 <body>
 <div id = "wordCloud"></div>
 <div id = "ngramSelector"></div>
-How many n-grams do you want?
+<h3>How many n-grams do you want?</h3>
 <select id = "selector" name = "How many n-grams do you want?">
   <option value="2">2</option>
   <option value="3">3</option>
 </select>
-Enter the search phrase
-<input id = "word" type="text" name="queryWord" value="" required>
+<h3>Select the search phrase</h3>
+<select id = "word" type="text" name="queryWord" value="" required>
+<option value = "accredited">accredited</option>,
+<option value = "analysis">analysis</option>
+<option value = "build">build</option>
+<option value = "campus">campus</option>
+<option value = "challenges">challenges</option>
+<option value = "communication">communication</option>
+<option value = "course">course</option>
+<option value = "coverage">coverage</option>
+<option value = "data">data</option>
+<option value = "database">database</option>
+<option value = "deadlines">deadlines</option>
+<option value = "decision">decision</option>
+<option value = "design">design</option>
+<option value = "develops">develops</option>
+<option value = "electrical">electrical</option>
+<option value = "engineers">engineers</option>
+<option value = "evaluate">evaluate</option>
+<option value = "event">event</option>
+<option value = "excellence">excellence</option>
+<option value = "files">files</option>
+<option value = "graphics">graphics</option>
+<option value = "information">information</option>
+<option value = "interface">interface</option>
+<option value = "java">java</option>
+<option value = "load">load</option>
+<option value = "maintains">maintains</option>
+<option value = "merchandise">merchandise</option>
+<option value = "operating">operating</option>
+<option value = "parts">parts</option>
+<option value = "programming">programming</option>
+<option value = "proven">proven</option>
+<option value = "python">python</option>
+<option value = "relations">relations</option>
+<option value = "release">release</option>
+<option value = "requirement">requirement</option>
+<option value = "response">response</option>
+<option value = "scripting">scripting</option>
+<option value = "software">software</option>
+<option value = "source">source</option>
+<option value = "supports">supports</option>
+<option value = "system">system</option>
+<option value = "tax">tax</option>
+<option value = "technology">technology</option>
+<option value = "telephonic">telephonic</option>
+<option value = "tests">tests</option>
+<option value = "tools">tools</option>
+<option value = "troubleshoot">troubleshoot</option>
+<option value = "workers">workers</option>
+</select>
 <button id = "button" type="button">Start</button>
-
+<div id="grey"></div>
+ <div id="m">
+  <img id="loader" src="images/spin.gif" />
+ </div>
+<link rel="stylesheet" type="text/css" href="style.css">        
 <script src="d3.js"></script>
 <script src="d3.layout.cloud.js"></script>
 <script src="main.js"> </script>
